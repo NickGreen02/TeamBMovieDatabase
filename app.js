@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const port = 3000
@@ -15,9 +16,9 @@ const dbName = 'WebDataBase';
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
-
-
 app.set('view engine', 'ejs')
+
+//ejs code
 
 //list all movies route
 app.get('/movies', (req, res) => {
@@ -34,13 +35,6 @@ app.get('/movies', (req, res) => {
 
 })
 app.get('/', (req, res) => res.send('Hello World!'))
-
-
-
-
-
-
-
 
 
 // Use connect method to connect to the Server
