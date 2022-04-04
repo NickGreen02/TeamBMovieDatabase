@@ -4,6 +4,7 @@
     <% movies.forEach(function(movie){ %>
         <h2> <%= movie.title %> </h2>
         <h3> <%= movie.vote_average %> </h3>
+        <h4> <%= movie.release_date %> </h4>
         <!--to output genres, possibly another query (collection.find) in app.js ???-->
         
     <% }); %>
