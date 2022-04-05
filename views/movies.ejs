@@ -5,6 +5,7 @@
         <h2> <%= movie.title %> </h2>
         <h3> <%= movie.vote_average %> </h3>
         <h4> <%= movie.release_date %> </h4>
+        <img src="https://image.tmdb.org/t/p/w500<%=movie.poster_path%> "width="200" height="300">
         <!--to output genres, possibly another query (collection.find) in app.js ???-->
         
     <% }); %>
