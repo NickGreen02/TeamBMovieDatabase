@@ -23,20 +23,22 @@ app.set('view engine', 'ejs')
 //list all movies route
 app.get('/movies', (req, res) => {
     //let movie_list = [{'title': 'Tenet'}, {'title':'Inception'}]
-
+    const {movName} = req.query;       //html search results????
     const db = client.db(dbName);
     const collection = db.collection('WebDataCollection');
     // Find some documents
-    collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("2010-01-01").toISOString(), $lt : new Date("2011-01-01").toISOString()}}).sort({"vote_average" : -1}).toArray(function(err, movie_list) {
+    collection.find({"title": {movName}}).toArray(function(err, movie_list) {
         assert.equal(err, null);
         res.render('movies', {'movies': movie_list})
-    });
+    }); 
     
     //to query based on genre and release date and sort by imdb rating see example below >>>
     //collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list)
 
 })
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => { 
+    res.render('home')
+});
 
 
 // Use connect method to connect to the Server

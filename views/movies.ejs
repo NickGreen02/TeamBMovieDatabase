@@ -1,12 +1,22 @@
-<h1>Movies</h1>
 
-<ul>
-    <% movies.forEach(function(movie){ %>
-        <h2> <%= movie.title %> </h2>
-        <h3> <%= movie.vote_average %> </h3>
-        <h4> <%= movie.release_date %> </h4>
-        <img src="https://image.tmdb.org/t/p/w500<%=movie.poster_path%> "width="200" height="300">
-        <!--to output genres, possibly another query (collection.find) in app.js ???-->
-        
-    <% }); %>
-</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<!-- cycles through all the movies listed -->
+<% movies.forEach(function(movie){ %>
+    <div id = "film-box"></div>
+        <script>
+        // retrieves the json url and passes he poster img jpg
+        $.getJSON("https://www.omdbapi.com/?i=<%=movie.imdb_id%>&apikey=4cb4521", function(data) { 
+                // JSON result in `data` variable
+                // retrieving the poster value from the json 
+                let poster = data.Poster;
+            
+                // retrieves all our data from our mongodb database and OMDB API for posters
+                document.getElementById("film-box").innerHTML+= "<h2> <%= movie.title %> </h2>";
+                document.getElementById("film-box").innerHTML+= "<h3> <%= movie.vote_average %> </h3>";
+                document.getElementById("film-box").innerHTML += "<img src="+poster+" width=\"200px\" height=\"300px\">";
+            });        
+        </script>
+<% }); %>
+
