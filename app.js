@@ -29,7 +29,7 @@ app.set('view engine', 'ejs')
 
 
 
-//list all movies route and example queries - TEST
+//list all movies route and example queries  TEST
 // app.get('/movies', (req, res) => {
 //     //let movie_list = [{'title': 'Tenet'}, {'title':'Inception'}]
 //     //const {movName} = req.query;       //html search results????

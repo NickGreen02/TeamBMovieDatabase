@@ -6,7 +6,7 @@
 <% movies.forEach(function(movie){ %>
     <div id = "film-box"></div>
         <script>
-        // retrieves the json url and passes the poster img .jpg
+        // retrieves the json url and passes the poster img jpg
         $.getJSON("https://www.omdbapi.com/?i=<%=movie.imdb_id%>&apikey=4cb4521", function(data) { 
                 // JSON result in `data` variable
                 // retrieving the poster value from the json 
