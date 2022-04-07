@@ -6,6 +6,7 @@ const port = 3000
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 // comment
+// test 2
 // Connection URL
 const uri = 'mongodb+srv://danielf:12345@cluster0.g3jm3.mongodb.net/WebDataBase?retryWrites=true&w=majority';
 
