@@ -1,5 +1,6 @@
 
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
@@ -15,30 +16,51 @@ const dbName = 'WebDataBase';
 // Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
+const jsonParser = bodyParser.json()
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+
 
 app.set('view engine', 'ejs')
 
 //ejs code
 
-//list all movies route
-app.get('/movies', (req, res) => {
-    //let movie_list = [{'title': 'Tenet'}, {'title':'Inception'}]
-    const {movName} = req.query;       //html search results????
+
+
+
+
+//list all movies route- TEST
+// app.get('/movies', (req, res) => {
+//     //let movie_list = [{'title': 'Tenet'}, {'title':'Inception'}]
+//     //const {movName} = req.query;       //html search results????
+//     const db = client.db(dbName);
+//     const collection = db.collection('WebDataCollection');
+//     // Find some documents
+//     collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list) {
+//         assert.equal(err, null);
+//         res.render('movies', {'movies': movie_list})
+//     }); 
+    
+//     //to query based on genre and release date and sort by imdb rating see example below >>>
+//     //collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list)
+
+// })
+
+app.post('/', urlencodedParser, function(req, res){
+    console.log(req.body);
     const db = client.db(dbName);
     const collection = db.collection('WebDataCollection');
-    // Find some documents
-    collection.find({"title": {movName}}).toArray(function(err, movie_list) {
+    //Find some documents
+    collection.find({"title" : {$regex : req.body.movName}}).toArray(function(err, movie_list) {
         assert.equal(err, null);
         res.render('movies', {'movies': movie_list})
     }); 
-    
-    //to query based on genre and release date and sort by imdb rating see example below >>>
-    //collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list)
 
-})
+});
+
 app.get('/', (req, res) => { 
     res.render('home')
 });
+
 
 
 // Use connect method to connect to the Server
