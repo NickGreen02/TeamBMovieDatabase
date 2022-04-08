@@ -54,7 +54,7 @@ app.post('/', urlencodedParser, function(req, res){
     const db = client.db(dbName);
     const collection = db.collection('WebDataCollection');
     //Find some documents
-    collection.find({"title" : {$regex : req.body.movName}}).toArray(function(err, movie_list) {
+    collection.find({$or: [{"title" : {$regex : req.body.movName}}, {"genres" : {$regex : req.body.movName}}]}).limit(4).toArray(function(err, movie_list) {
         assert.equal(err, null);
         res.render('movies', {'movies': movie_list})
     }); 
