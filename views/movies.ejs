@@ -20,6 +20,23 @@
                 document.getElementById("film-box").innerHTML += "<img src="+poster+" width=\"200px\" height=\"300px\">";
 
                 
+            }); 
+            
+            // checking a second api if the first one does not display the image
+
+            $.getJSON("https://api.themoviedb.org/3/movie/<%=movie.imdb_id%>?api_key=e1ce418679f456837dc459aeb86c279e", function(data) { 
+                // JSON result in `data` variable
+                // retrieving the poster value from the json 
+                let poster = data.Poster;
+            
+                
+
+                // retrieves all our data from our mongodb database and OMDB API for posters
+                document.getElementById("film-box").innerHTML+= "<h2> <%= movie.title %> </h2>";
+                document.getElementById("film-box").innerHTML+= "<h3> <%= movie.vote_average %> </h3>";
+                document.getElementById("film-box").innerHTML += "<img src="+poster+" width=\"200px\" height=\"300px\">";
+
+                
             });        
         </script>
 <% }); %>
