@@ -27,7 +27,7 @@
             $.getJSON("https://api.themoviedb.org/3/movie/<%=movie.imdb_id%>?api_key=e1ce418679f456837dc459aeb86c279e", function(data) { 
                 // JSON result in `data` variable
                 // retrieving the poster value from the json 
-                let poster = data.Poster;
+                let poster = data.poster_path;
             
                 
 
