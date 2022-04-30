@@ -48,7 +48,7 @@ app.set('view engine', 'ejs')
 
 // this post will be activated when the submit button is clicked
 // it will use the user query and search through the database to found the relevant movie name
-
+//
 app.post('/', urlencodedParser, function(req, res){
     console.log(req.body);
     const db = client.db(dbName);
