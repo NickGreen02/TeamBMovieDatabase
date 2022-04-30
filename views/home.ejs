@@ -2,6 +2,19 @@
     <h1>Movies</h1>
     <form class="search" action="/" method="POST">
         <input class="searchBar" type="text" placeholder="Search movies..." name = "movName">
+        <select name = "genreName" id="genreDropdown">
+            <option value="">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Romance">Romance</option>
+            <option value="Drama">Drama</option>
+        </select>
+        <input class="yearBar" type="text" placeholder="Year released..." name="yearInput">
+        <input class="budgetBar" type="text" placeholder="Budget lower bound..." name="budgetLower">
+        <input class="budgetBar" type="text" placeholder="Budget upper bound..." name="budgetUpper">
+        <input class="revenueBar" type="text" placeholder="Revenue lower bound..." name="revenueLower">
+        <input class="revenueBar" type="text" placeholder="Revenue upper bound..." name="revenueUpper">
         <button><i class="searchButton" >Search</i></button>
     </form>
 </header>
