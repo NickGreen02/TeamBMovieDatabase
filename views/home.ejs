@@ -1,21 +1,63 @@
-<header>
-    <h1>Movies</h1>
-    <!-- form for movie search and filter -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies DB</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <nav>
+      <ul>
+        <li style="float:left"><a href="#">Movie DataBase</a></li>
+        
+         <li><a href="http://localhost:3000/">Home</a></li>
+        
+      </ul>
+    </nav>
+<div class="entire-content">
+
+    <div class="title">
+    <h1>Movies DataBase</h1>
+
+  </div>
+
+<div class="container">
+  <div class="search-selection">
     <form class="search" action="/" method="POST">
-        <input class="searchBar" type="text" placeholder="Search movies..." name = "movName">
-        <select name = "genreName" id="genreDropdown">
-            <option value="">All Genres</option>
-            <option value="Action">Action</option>
-            <option value="Thriller">Thriller</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Romance">Romance</option>
-            <option value="Drama">Drama</option>
-        </select>
-        <input class="yearBar" type="text" placeholder="Year released..." name="yearInput">
-        <input class="budgetBar" type="text" placeholder="Budget lower bound..." name="budgetLower">
-        <input class="budgetBar" type="text" placeholder="Budget upper bound..." name="budgetUpper">
-        <input class="revenueBar" type="text" placeholder="Revenue lower bound..." name="revenueLower">
-        <input class="revenueBar" type="text" placeholder="Revenue upper bound..." name="revenueUpper">
+        <input class="searchBar" type="text" placeholder="Search Movies" name = "movName">
         <button><i class="searchButton" >Search</i></button>
+
+        <select name = "genreName" id="genreDropdown">
+          <option value="">All Genres</option>
+          <option value="Action">Action</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Romance">Romance</option>
+          <option value="Drama">Drama</option>
+      </select>
+      <input class="yearBar" type="text" placeholder="Year released..." name="yearInput">
+      <input class="budgetBar" type="text" placeholder="Budget lower bound..." name="budgetLower">
+      <input class="budgetBar" type="text" placeholder="Budget upper bound..." name="budgetUpper">
+      <input class="revenueBar" type="text" placeholder="Revenue lower bound..." name="revenueLower">
+      <input class="revenueBar" type="text" placeholder="Revenue upper bound..." name="revenueUpper">
+      <!-- <button><i class="searchButton" >Search</i></button> -->
+      </div>
+
+      <!-- <div class="films-container">
+        <h2>Popular Films</h2>
+        <div class="films-box">
+
+          
+
+        </div>
+      </div> -->
+
+    </div>
+        
     </form>
-</header>
+  </div>
+</body>
+</html>

@@ -11,6 +11,8 @@ const assert = require('assert');
 // Connection URL
 const uri = 'mongodb+srv://danielf:12345@cluster0.g3jm3.mongodb.net/WebDataBase?retryWrites=true&w=majority';
 
+app.use(express.static(__dirname + '/public'));
+
 // Database Name
 const dbName = 'WebDataBase';
 

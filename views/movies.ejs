@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies DB</title>
+  </head>
+  <body>
+    
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  <nav>
+    <ul>
+      <li style="float:left"><a href="#">Movie DataBase</a></li>
+      
+       <li><a href="http://localhost:3000/">Home</a></li>
+      
+    </ul>
+  </nav>
+
+  <div class="title">
+  <h1>Movies</h1>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -5,10 +28,19 @@
 
 <button onclick="window.location.href = 'http://localhost:3000/'" id="homeButton" >Home</button>
 
+<div class = "film-container">
+    <div id = "film-box">
+    </div>
+</div>
 <!-- cycles through all the movies listed -->
 <% movies.forEach(function(movie){ %>
-    <div id = "film-box"></div>
+    
+  
+
         <script>
+
+         
+
         // retrieves the json url and passes the poster img jpg
         $.getJSON("https://www.omdbapi.com/?i=<%=movie.imdb_id%>&apikey=4cb4521", function(data) { 
                 // JSON result in `data` variable
@@ -18,12 +50,41 @@
                 
 
                 // retrieves all our data from our mongodb database and OMDB API for posters
-                document.getElementById("film-box").innerHTML+= "<h2> <%= movie.title %> </h2>";
-                document.getElementById("film-box").innerHTML+= "<h3> <%= movie.vote_average %> </h3>";
-                document.getElementById("film-box").innerHTML += "<img src="+poster+" width=\"200px\" height=\"300px\">";
+               
+                let filmItem = document.createElement("film-item");
+                filmItem.setAttribute("class","filmItem");
+
+                let itemTitle = document.createElement("film-title");
+                itemTitle.setAttribute("class","itemTitle");
+
+                let itemImg = document.createElement("film-img");
+                itemImg.setAttribute("class","itemImg");
+
+                let itemContent = document.createElement("film-content");
+                itemContent.setAttribute("class","itemContent");
+
+                itemTitle.innerHTML +="<h2> <%= movie.title %> </h2>";
+                itemImg.innerHTML +="<img src="+poster+" width=\"200px\" height=\"300px\">";
+                itemContent.innerHTML +="<h3> IMDB: <%= movie.vote_average %></h3>";
+                itemContent.innerHTML +="<h4> Budget: $<%= new Intl.NumberFormat().format(movie.budget) %> </h4>";
+                itemContent.innerHTML +="<h4> Revenue: $<%= new Intl.NumberFormat().format(movie.revenue)  %> </h4>";
+               
 
                 
+
+                let filmBoxElm = document.getElementById("film-box");
+
+                filmItem.appendChild(itemTitle);
+                filmItem.appendChild(itemImg);
+                filmItem.appendChild(itemContent);
+
+                filmBoxElm.appendChild(filmItem);
+
             });       
         </script>
+       
+        
 <% }); %>
 
+</body>
+</html>
