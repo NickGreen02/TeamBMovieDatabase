@@ -24,10 +24,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- <button onclick="location.href = 'localhost:3000'" id="homeButton" >Home</button> -->
-
-<!-- <button onclick="window.location.href = 'http://localhost:3000/'" id="homeButton" >Home</button> -->
-
 <div class = "film-container">
     <div id = "film-box">
     </div>
@@ -35,11 +31,7 @@
 <!-- cycles through all the movies listed -->
 <% movies.forEach(function(movie){ %>
     
-  
-
         <script>
-
-         
 
         // retrieves the json url and passes the poster img jpg
         $.getJSON("https://www.omdbapi.com/?i=<%=movie.imdb_id%>&apikey=4cb4521", function(data) { 

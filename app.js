@@ -25,29 +25,6 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 app.set('view engine', 'ejs')
 
-//ejs code
-
-
-
-
-
-//list all movies route and example queries  TEST
-// app.get('/movies', (req, res) => {
-//     //let movie_list = [{'title': 'Tenet'}, {'title':'Inception'}]
-//     //const {movName} = req.query;       //html search results????
-//     const db = client.db(dbName);
-//     const collection = db.collection('WebDataCollection');
-//     // Find some documents
-//     collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list) {
-//         assert.equal(err, null);
-//         res.render('movies', {'movies': movie_list})
-//     }); 
-    
-//     //to query based on genre and release date and sort by imdb rating see example below >>>
-//     //collection.find({"genres" : {$regex : "Comedy"}, "release_date" : {$gte : new Date("1995-01-01").toISOString(), $lt : new Date("2000-01-01").toISOString()}}).sort({"vote_average" : 1}).toArray(function(err, movie_list)
-
-// })
-
 // this post will be activated when the submit button is clicked
 // it will use the user query and search through the database to found the relevant movie name
 //
