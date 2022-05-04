@@ -1,3 +1,4 @@
+
 *{
   padding: 0;
   margin: 0;
@@ -10,10 +11,10 @@ nav{
  /* padding-top: 10px; */
  padding-bottom: 0px;
  height: 2.3em;
- background-color: black;
+ background-color: rgb(8, 33, 64);
  box-shadow: 2px 2px 10px rgb(0, 0, 0);
  /* box-shadow: 2px 2px 10px rgb(245, 239, 157); */
- margin-bottom: 30px;
+ margin-bottom: 50px;
 }
 
 .title{
@@ -42,9 +43,14 @@ nav{
  margin-bottom: 5px;
  padding-right: 0;
  margin-right: 0;
+ border: 2px solid black;
 }
+
 form.search input[type=text]:focus{
 outline: 0;
+  background-color:black;
+  color:white;
+  
 }
 
 .search-box{
@@ -55,7 +61,10 @@ outline: 0;
 button{
   display: inline-block;
   position: absolute;
-  background-color: rgb(129, 240, 157);
+  /* float: left; */
+ appearance: none;
+  background-color: rgba(75, 171, 34);
+  border: 2px solid black;
  /* border-color: black;  */
  font-weight:900;
  font-size: 16px;
@@ -74,9 +83,18 @@ button{
 }
 button:hover{
   color: white;
+  background-color:rgb(67, 156, 30);
 }
 button:focus{
   background-color: rgb(76, 219, 219);
+}
+button:active{
+  background-color:green;
+}
+
+.filter-box select:focus{
+  background-color:black;
+  color:white;
 }
 
 .search-selection{
@@ -106,6 +124,7 @@ a:hover{
  text-align: center;
  list-style-type: none;
 } */
+
 #film-box{
  display: flex;
  flex-flow: row wrap;
