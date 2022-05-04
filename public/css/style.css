@@ -30,7 +30,6 @@ nav{
  margin: 0;
 }
 
-<<<<<<< HEAD
 #budgetRevealButton{
   display:inline;
   position:static;
@@ -47,9 +46,6 @@ nav{
   width: 6em;
   height: 45px;
 }
-=======
-
->>>>>>> 79691d9e9f6ec905dad6e3f0bddcf9cc8d66672c
 
 .search .searchBar{
  width: 60%;
@@ -140,8 +136,4 @@ a:hover{
 .films-line{
  display: block;
  text-align: center;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 79691d9e9f6ec905dad6e3f0bddcf9cc8d66672c
