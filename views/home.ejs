@@ -22,20 +22,25 @@
     <div class="title">
     <h1>Movies DataBase</h1>
     </div>
-  
-
-
 
 <div class="container">
   <div class="search-selection">
     <form class="search" action="/" method="POST">
       <script type="text/javascript">
         function revealBudget() {
-          document.getElementById("budgetDiv").style.display = "block";
-
+          if( document.getElementById("budgetDiv").style.display.toString() == "none"){
+            document.getElementById("budgetDiv").style.display = "block";
+          }else if( document.getElementById("budgetDiv").style.display.toString() == "block"){
+            document.getElementById("budgetDiv").style.display = "none";
+          }
         }
+        
         function revealRevenue(){
-          document.getElementById("revenueDiv").style.display = "block";
+          if( document.getElementById("revenueDiv").style.display.toString() == "none"){
+            document.getElementById("revenueDiv").style.display = "block";
+          }else if( document.getElementById("revenueDiv").style.display.toString() == "block"){
+            document.getElementById("revenueDiv").style.display = "none";
+          }
         }
       </script>
       <div class="search-box">
@@ -43,9 +48,6 @@
         <button><i class="searchButton" >Search</i></button>
       </div>
           <div class="filter-box"> 
-            <!-- <div class="filter-box-header">
-              <h3>Filter </h3>
-            </div>  -->
 
         <select name = "genreName" id="genreDropdown">
           <option value="">All Genres</option>
@@ -72,14 +74,6 @@
     </div>
       </div>
 
-      <!-- <div class="films-container">
-        <h2>Popular Films</h2>
-        <div class="films-box">
-          
-        </div>
-      </div> -->
-
-  
     </div>
     </form>
       
