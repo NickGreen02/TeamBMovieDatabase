@@ -11,7 +11,7 @@
 
     <nav>
       <ul>
-        <li style="float:left"><a href="#">Movie DataBase</a></li>
+        <li style="float:left"><a>Movie DataBase</a></li>
         
          <li><a href="http://localhost:3000/">Home</a></li>
         
@@ -24,11 +24,28 @@
 
   </div>
 
+
+
 <div class="container">
   <div class="search-selection">
     <form class="search" action="/" method="POST">
+      <script type="text/javascript">
+        function revealBudget() {
+          document.getElementById("budgetDiv").style.display = "block";
+
+        }
+        function revealRevenue(){
+          document.getElementById("revenueDiv").style.display = "block";
+        }
+      </script>
+      <div class="search-box">
         <input class="searchBar" type="text" placeholder="Search Movies" name = "movName">
         <button><i class="searchButton" >Search</i></button>
+      </div>
+          <div class="filter-box"> 
+            <!-- <div class="filter-box-header">
+              <h3>Filter </h3>
+            </div> -->
 
         <select name = "genreName" id="genreDropdown">
           <option value="">All Genres</option>
@@ -39,25 +56,33 @@
           <option value="Drama">Drama</option>
       </select>
       <input class="yearBar" type="text" placeholder="Year released..." name="yearInput">
-      <input class="budgetBar" type="text" placeholder="Budget lower bound..." name="budgetLower">
-      <input class="budgetBar" type="text" placeholder="Budget upper bound..." name="budgetUpper">
-      <input class="revenueBar" type="text" placeholder="Revenue lower bound..." name="revenueLower">
-      <input class="revenueBar" type="text" placeholder="Revenue upper bound..." name="revenueUpper">
-      <!-- <button><i class="searchButton" >Search</i></button> -->
+      
+      <div id="budgetDiv" style="display:none">
+        <input class="budgetBar" type="text" placeholder="Budget lower bound..." name="budgetLower">
+        <input class="budgetBar" type="text" placeholder="Budget upper bound..." name="budgetUpper">
+      </div>
+      
+      <div id="revenueDiv" style="display:none">
+        <input class="revenueBar" type="text" placeholder="Revenue lower bound..." name="revenueLower">
+        <input class="revenueBar" type="text" placeholder="Revenue upper bound..." name="revenueUpper">
+      </div>
+      <br>
+      <button onclick="revealBudget()" type="button"  id="budgetRevealButton">Filter by budget</button>
+      <button onclick="revealRevenue()" type="button"  id="revenueRevealButton">Filter by revenue</button>
+    </div>
       </div>
 
       <!-- <div class="films-container">
         <h2>Popular Films</h2>
         <div class="films-box">
-
           
-
         </div>
       </div> -->
 
     </div>
         
     </form>
+      
   </div>
 </body>
 </html>
