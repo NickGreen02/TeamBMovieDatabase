@@ -2,12 +2,8 @@
 *{
   padding: 0;
   margin: 0;
- overflow-x: hidden;
+  overflow-x: hidden;
 } 
-
-.scrollable-element{
-  scrollbar-color: red yellow;
-}
 
 nav{
  width: 100%;
@@ -136,7 +132,7 @@ a:hover{
 .itemTitle{
  font-size: 14px;
 }
-/*  */
+
 .films-line{
  display: block;
  text-align: center;
